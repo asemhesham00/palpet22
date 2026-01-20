@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "464545209060",
+    "project_id": "palpet-790cf",
+    "storage_bucket": "palpet-790cf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464545209060:android:62f809147e53610846aaf1",
+        "android_client_info": {
+          "package_name": "com.example.palpet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJcTz16zJHvTHjPKOG467hvaa98if3-0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
