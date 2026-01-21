@@ -25,12 +25,10 @@ class PetCard extends StatelessWidget {
     required this.onTap,
   });
 
-  // HELPER: Check if the image is a local asset
   bool get _isLocalAsset {
     return imageUrl.startsWith('assets/') || imageUrl.startsWith('lib/');
   }
 
-  // HELPER: Check if it's a default icon (to determine background color)
   bool get _isDefaultIcon {
     return _isLocalAsset ||
         imageUrl.contains('flaticon') ||
@@ -38,7 +36,6 @@ class PetCard extends StatelessWidget {
         imageUrl.contains('placeholder');
   }
 
-  // HELPER: Build the correct image widget
   Widget _buildImage() {
     if (_isLocalAsset) {
       return Image.asset(
@@ -255,7 +252,6 @@ class PetCard extends StatelessWidget {
                 color: isIcon
                     ? AppColors.primary.withOpacity(0.05)
                     : Colors.grey[100],
-                // THIS IS THE FIXED PART
                 child: isIcon
                     ? Padding(
                         padding: const EdgeInsets.all(30.0),

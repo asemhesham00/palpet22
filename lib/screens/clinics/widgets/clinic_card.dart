@@ -33,10 +33,12 @@ class ClinicCard extends StatelessWidget {
         imageUrl.contains('placeholder');
   }
 
-  Widget _buildImage(String path, BoxFit fit) {
+Widget _buildImage(String path, BoxFit fit) {
     if (_isLocalAsset) {
+      final cleanPath = path.startsWith('lib/') ? path.substring(4) : path;
+      
       return Image.asset(
-        path,
+        cleanPath,
         fit: fit,
         errorBuilder: (c, e, s) =>
             const Icon(Icons.local_hospital, size: 50, color: Colors.grey),

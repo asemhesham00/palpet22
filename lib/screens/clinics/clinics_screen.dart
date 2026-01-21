@@ -22,25 +22,25 @@ class _ClinicsScreenState extends State<ClinicsScreen> {
   final DatabaseService _dbService = DatabaseService();
 
   String _searchKeyword = "";
-                                                                                             
-   int _selectedFilterIndex = 0;     
 
-  final String _defaultClinicImage = 'assets/imgs/veterinary.png';          
+  int _selectedFilterIndex = 0;
 
-  bool _isClinicOpen(String workingHours) {             
+  final String _defaultClinicImage = 'assets/imgs/veterinary.png';
+
+  bool _isClinicOpen(String workingHours) {
     try {
-      if (workingHours.isEmpty) return false;            
+      if (workingHours.isEmpty) return false;
 
-      final parts = workingHours.contains(' - ')                    
-          ? workingHours.split(' - ')                            
-          : workingHours.split('-');                                            
-                        
-      if (parts.length != 2) return false;              
-                           
-      String normalizeTime(String rawTime) {                
-        String clean = rawTime.trim().toUpperCase();                
-        String period = "";                                               
-        if (clean.contains("AM")) {                       
+      final parts = workingHours.contains(' - ')
+          ? workingHours.split(' - ')
+          : workingHours.split('-');
+
+      if (parts.length != 2) return false;
+
+      String normalizeTime(String rawTime) {
+        String clean = rawTime.trim().toUpperCase();
+        String period = "";
+        if (clean.contains("AM")) {
           period = "AM";
           clean = clean.replaceAll("AM", "").trim();
         } else if (clean.contains("PM")) {
@@ -197,7 +197,7 @@ class _ClinicsScreenState extends State<ClinicsScreen> {
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(40.0),
-                              child: Image.network(
+                              child: Image.asset(
                                 _defaultClinicImage,
                                 fit: BoxFit.contain,
                                 errorBuilder: (ctx, _, __) => const Icon(
@@ -546,7 +546,7 @@ class _ClinicsScreenState extends State<ClinicsScreen> {
                                     alignment: Alignment.center,
                                     children: [
                                       if (selectedImage == null)
-                                        Image.network(
+                                        Image.asset(
                                           _defaultClinicImage,
                                           height: 100,
                                           fit: BoxFit.contain,
